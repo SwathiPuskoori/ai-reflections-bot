@@ -67,7 +67,7 @@ Write one reflection now (max 300 characters):"""
         }
         
         payload = {
-            "model": "kimi-k2.5",
+            "model": "kimi-k2.5:cloud",
             "messages": [
                 {
                     "role": "user",
