@@ -33,13 +33,10 @@ jobs:
           
       - name: Commit updated history
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
           git add data/tweet_history.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Update tweet history - $(date +'%Y-%m-%d')"
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
+          git push
+        env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
