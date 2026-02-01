@@ -39,4 +39,4 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "Update tweet history - $(date +'%Y-%m-%d')"
           git push
         env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
